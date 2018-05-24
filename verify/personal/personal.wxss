@@ -1,0 +1,4 @@
+/* verify/personal/personal.wxss */
+page{
+  background: #f0f0f2;
+}

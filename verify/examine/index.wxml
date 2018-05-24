@@ -1,0 +1,44 @@
+<view class="examine"> 
+  <view class="image-view">
+    <view class="img" wx:for="{{imgs}}" wx:for-item="item" wx:key="*this"  bindtap="chooseImg">
+      <image src="{{item}}" data-index="{{index}}" style="width: 94%;height:180px;border-radius: 6px;background-color: #FFF;margin-top: 10px;"   ></image>
+    </view>
+    <!-- <button class="delete-btn btn" data-index="{{index}}" catchtap="deleteImg" wx:if="{{imgState != ''}}" >删除</button> -->
+    <!-- <button class="upload-img-btn btn top-5" bindtap="chooseImg" wx:if="{{imgState == ''}}" >上传图片</button> -->
+  </view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="inputClassAll">
+        <view class='inputHight'>
+            <input class='inputClass inputGroup' placeholder-class="inputPlace" name="userName"   placeholder="请输入姓名" value='{{name}}'/>
+        </view>
+        <view class='inputHight'>
+            <input class='inputClass inputGroup' placeholder-class="inputPlace" name="idNo"   placeholder="请输入身份证号" value='{{id_no}}'/>
+        </view>
+        <view class='inputHight'>
+            <input class='inputClass inputGroup' placeholder-class="inputPlace"  name="phone"   placeholder="请输入电话号"/>
+        </view>
+ 
+
+    </view>
+
+    <view class='btnView'>
+      <button class='btn' disabled='{{btnState}}'  formType="submit" >支付{{money }}元开始核查</button>
+    </view>
+    
+</form>
+    
+ <view class='btnView top-20'>
+   <checkbox-group bindchange="checkboxChange" class="checkgroup">
+    <label  wx:for="{{items}}" wx:key ='checkSelet'>
+      <view class='top-5'>
+         <checkbox value="{{item.name}}" checked="{{item.checked}}"/>\t\t\t{{item.value}} 
+      </view>
+    </label>
+  </checkbox-group>
+ </view>
+
+</view>
+
+<view class='tan'  wx:if="{{ accredit == 0}}">
+    <button open-type="getUserInfo" class="btn btnopacity" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击授权进入</button>
+</view>

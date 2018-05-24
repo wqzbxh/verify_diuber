@@ -1,0 +1,254 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.inputClass{
+  height: 30px;
+  border:1px solid #d2d2d2;
+  background: #fff;
+  font-size: 15px;
+  color: #4d4d4d;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;    
+}
+.inputHight{
+  margin-bottom: 8px;
+}
+.inputPlace{
+  font-size: 16px;
+  margin-left: 5px; 
+  text-indent: 2px;
+}
+.btn{
+  background: #2d992e;
+  color: #fff;
+  width: 94%;
+}
+.btnView{
+    width: 100%;
+}
+.checkgroup{
+  width: 98%;
+  margin-left: 2%;
+  font-size: 15px;
+}
+
+.top-10{
+  margin-top:10px;
+}
+.top-20{
+  margin-top:20px;
+}
+.top-5{
+  margin-top:5px;
+}
+/*宽度  */
+.width96{
+  width: 96%;
+}
+
+.width100{
+  width:100%;
+}
+/*段落控制  */
+.text-indent1{
+  text-indent: 1rem;
+}
+
+/*距离  */
+.contentline-height{
+  line-height:18px;
+}
+.letter-1{
+ letter-spacing:1px;
+}
+/*字体  */
+.titleFont{
+  font-size: 13px;
+  font-weight: bold;
+
+}
+.titleFont-15{
+  font-size: 15px;
+  font-weight: bold;
+
+}
+.titleFont-14{
+   font-size: 14px;
+}
+.titleFontcontent-13{
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.titleFontB{
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+.titleFontcontent-15{
+  font-size: 16px;
+  color: #595959;
+}
+.titleFontcontent-12{
+  font-size: 12px;
+
+}
+
+
+.titleFontGreen{
+  font-size: 13px;
+  font-weight: bold;
+  color: #2d992e;
+}
+
+
+.titleFontRed{
+  font-size: 13px;
+  font-weight: bold;
+  color: #e2212c;
+}
+
+.titleFontGray{
+  font-size: 12px;
+  font-weight: 600;
+  color: #808080;
+}
+.local{
+  text-align: center;
+}
+
+/* 背景颜色 */
+.bk-fff{
+  background: #fff;
+}
+.gray {
+  color: #333333;
+}
+/*内填充  */
+
+.topBom-10{
+  padding: 10px 0px;
+}
+.topBom-left-10{
+  padding-left: 10px ;
+}
+
+.topBom-20{
+  padding: 15px 0px;
+}
+/*外填充  */
+.martopBon-10{
+  margin: 10px 0px;
+}
+.marRight-5{
+  margin-right: 5px;
+}
+
+.martopBon-5{
+  margin: 5px 0px;
+}
+
+.marRight-15{
+  margin-right: 15px;
+}
+
+.martopleft-5{
+  margin: 0px 5px;
+}
+
+.martopleft2{
+  margin: 2%;
+}
+/*位置文本  */
+.text-center{
+  width: 100%;
+  text-align: center;
+}
+.text-left{
+  width: 100%;
+  text-align: left;
+  margin-left:5px;
+}
+/*线条  */
+.text-border{
+ border: 1px solid #d2d2d2;
+}
+.bottom-border{
+ border-bottom: 1px solid #d2d2d2;
+}
+
+.borderRed{
+  width: 100px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  border: 1px solid #66e0ff;
+  color: #66e0ff;
+}
+
+.borderState{
+  width:100px;
+  height: 24px;
+  border: 1px solid #66e0ff;
+  text-align: center;
+  line-height: 24px;
+  color: #66e0ff;
+}
+/*浮动控制 */
+
+.float-right{
+  float: right;
+}
+.float-left{
+  float: left;
+}
+.clearFloat{
+  overflow: auto;
+
+}
+.btnState{
+  width:100px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 4px;
+  background: #2d992e;
+  color: #fff;
+}
+
+.btnRed{
+  width: 100px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 4px;
+  background: #e2212c;
+  color: #fff;
+}
+
+
+.tan{
+  /* position: fixed; */
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9999;
+  background-image: url(http://diuber-guanche.oss-cn-shanghai.aliyuncs.com/IMG152661006279418671);
+}
+.btnopacity{
+   width:150px;
+   margin-top:50%;
+   opacity:1
+}

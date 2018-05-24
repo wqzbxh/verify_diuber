@@ -1,0 +1,108 @@
+<!--verify/examineResult/index.wxml-->
+<view  wx:if="{{statues == 1}}">
+    <view class='bk-fff topBom-10 martopBon-5 text-border'>
+        <view class='titleFont local top-5 '>1  身份证真假核实结果</view>
+        <view class='text-center martopBon-10 titleFontGreen'>姓名和号码匹配OK</view>
+        <view class='text-center martopBon-10 titleFontGreen'>
+            <image src="https://mail.163.com/dashi/activity/rsact1/actsources/img/1965" style='height:150px;'></image>
+        </view>
+        <view class='text-center martopBon-10 titleFontGray'>系统返回身份证照片</view>
+    </view>
+    <view class='bk-fff topBom-10 martopBon-5 text-border'>
+        <view class='titleFont local top-5 '>2  手机号实名核查</view>
+        <view class='text-center martopBon-10 titleFontGreen'>姓名和手机号实名信息一致</view>
+    </view>
+    <view class='bk-fff topBom-10 martopBon-5 text-border'>
+        <view class='titleFont local top-5 '>3  公民失信记录核查</view>
+        <view class='text-center martopBon-10 titleFontGreen'>未查到失信记录</view>
+    </view>
+    <view class='bk-fff topBom-10 martopBon-5 text-border'>
+        <view class='titleFont local top-5 '>4  公民不良信息核查</view>
+        <view class='text-center martopBon-10 titleFontGreen'>未查到不良记录</view>
+    </view>
+    <view class='bk-fff topBom-10 martopBon-5 text-border'>
+        <view class='titleFont local top-5 '>5  租车黑名单查询</view>
+        <view class='text-center martopBon-10 titleFontGreen'>未查到租车黑名单记录</view>
+    </view>
+</view> 
+<!--核查不一致结果  telRealverifystatus -->
+<view  wx:if="{{statues == 2}}">
+    <view class='bk-fff topBom-10 martopBon-5 text-border' wx:if="{{idNoReal==1}}">
+        <view class='titleFont local top-5 '>1  身份证真假核实结果</view>
+        <view class='text-center martopBon-10 titleFontGreen' wx:if="{{idNoverifystatus == 0}}">姓名和号码匹配OK</view>
+        <view class='text-center martopBon-10 titleFontRed' wx:else>姓名和身份证号码不匹配！</view>
+        <view class='text-center martopBon-10 titleFontGreen'>
+            <image src="https://mail.163.com/dashi/activity/rsact1/actsources/img/1965" style='height:150px;'></image>
+        </view>
+        <view class='text-center martopBon-10 titleFontGray'>系统返回身份证照片</view>
+    </view>
+    <view class='bk-fff topBom-10 martopBon-5 text-border'  wx:if="{{telReal==1}}">
+        <view class='titleFont local top-5 '>2  手机号实名核查</view>
+        <view class='text-center martopBon-10 titleFontGreen'  wx:if="{{telRealverifystatus == 0}}">姓名和手机号实名信息一致</view>
+        <view class='text-center martopBon-10 titleFontRed' wx:else>姓名和手机号实名信息不一致</view>
+    </view>
+
+
+    <view class='bk-fff topBom-10 martopBon-5 text-border' wx:if="{{loseType==1 }}">
+        <view  wx:if="{{loseArray!=null}}">
+          <view class='titleFont local top-5 '>3  公民失信记录核查</view>
+          <view class='text-center martopBon-10 titleFontRed'>查到以下是失信信息</view>
+          <view class='martopBon-10' >
+              <view  wx:for="{{loseArray}}" wx:key ='loser' wx:for-item="loseArray"  class='martopBon-10 width100'>
+                    <view class='clearFloat martopleft2'>
+                        <view class='float-left titleFontcontent-12 '>{{loseArray.publishDate}}　　</view>
+                        <view class='float-left titleFontcontent-12 '>{{loseArray.caseCode}}</view>
+                    </view>
+                    <view class='titleFontcontent-13 martopleft2 letter-1'>
+                      {{loseArray.disreputTypeName}}
+                    </view>
+              </view>
+          </view>
+        </view>
+        <view class='bk-fff topBom-10 martopBon-5 text-border' wx:else>
+            <view class='titleFont local top-5 '>3  公民失信记录核查</view>
+            <view class='text-center martopBon-10 titleFontGreen'>未查到失信记录</view>
+        </view>
+    </view>
+
+
+
+    <view class='bk-fff topBom-10 martopBon-5 text-border'  wx:if="{{badList==1}}">
+        <view class='titleFont local top-5 '>4  不良记录核查</view>
+        <view class='text-center martopBon-10 titleFontRed'  wx:if="{{loseArray.res==1}}">查到以下是不良记录信息
+          <view class='martopBon-10' >
+              <view  class='martopBon-10 width100'>
+                    <view class='clearFloat martopleft2'>
+                        <view class='float-left titleFontcontent-12 '>{{loseArray.date}}　　</view>
+                        <view class='float-left titleFontcontent-12 '>{{loseArray.controlNo}}</view>
+                    </view>
+                    <view class='titleFontcontent-13 martopleft2 letter-1 text-left titleFontB' >
+                      {{loseArray.description}}
+                    </view>
+                    <view class='titleFontcontent-13 text-left'>
+                         查询结果描述（A：在逃；B：前科；C：吸毒；D：涉毒）
+                    </view>
+              </view>
+          </view> 
+        </view>
+       <view class='text-center martopBon-10 titleFontGreen' wx:else>未查到失信记录</view>
+    </view>
+
+    <view class='bk-fff topBom-10 martopBon-5 text-border'  wx:if="{{badActionType==1 ||badActionType==2}}">
+        <view class='titleFont local top-5 '>5  租车黑名单记录核查</view>
+        <view class='text-center martopBon-10 titleFontGreen'   wx:if="{{badActionType == 2}}">未查到租车黑名单记录</view>
+        <view class='text-center martopBon-10 titleFontRed'  wx:else>查到以下是租车黑名单记录
+          <view class='martopBon-10' >
+              <view  wx:for="{{badAction}}" wx:key ='loser' wx:for-item="badAction"  class='martopBon-10 width100'>
+                    <view class='clearFloat martopleft2'>
+                        <view class='float-left titleFontcontent-12 '>{{badAction.create_time}}　　</view>
+                    </view>
+                    <view class='titleFontcontent-13 martopleft2 letter-1 '>
+                      {{badAction.comment}}
+                    </view>
+              </view>
+          </view>
+        </view>
+    </view>
+    
+</view> 

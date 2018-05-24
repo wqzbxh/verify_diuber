@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#e2212c",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "司机核查记录列表",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "#000",
+  "enablePullDownRefresh": true
+}

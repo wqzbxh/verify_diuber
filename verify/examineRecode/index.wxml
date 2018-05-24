@@ -1,0 +1,46 @@
+<!--verify/examineRecode/index.wxml-->
+<view   wx:if="{{id == 1}}">
+    <navigator url='../detail/detail?id={{vo.id}}&type={{vo.recodeType}}' class='gray titleFont-14 bk-fff topBom-10 text-border top-5'  wx:for="{{recodeList}}" wx:key ='recodeList' wx:for-item="vo">
+
+          <view class='top-5 topBom-left-10 clearFloat'>
+              <view class='float-left'>姓名：{{vo.name}}</view>
+              <view class='.marRight-15 float-right borderState' wx:if="{{vo.type == 1}}">身份证真假</view>
+              <view class='marRight-15 float-right borderRed 'wx:if="{{vo.type == 2}}">手机号实名</view>
+              <view class='marRight-15 float-right borderRed 'wx:if="{{vo.type == 3}}">公民失信记录</view>
+              <view class='marRight-15 float-right borderRed 'wx:if="{{vo.type == 4}}">不良行为记录</view>
+              <view class='marRight-15 float-right borderRed 'wx:if="{{vo.type == 5}}">租车黑名单</view>
+          </view>
+
+          <view class='top-5 topBom-left-10'>身份证号码：{{vo.idNo}}</view>
+          <view class='top-5 topBom-left-10'>手机号码：{{vo.telephone}}</view>
+          <view class='top-5 topBom-left-10 clearFloat'>
+              <view class='float-left'>核查日期：{{vo.createTime}}</view>
+              <view class='marRight-15 float-right btnState' wx:if="{{vo.data.verifystatus == 0 && vo.type == 1}}">无问题</view>
+              <view class='marRight-15 float-right btnState' wx:elif="{{vo.data.verifystatus == 0 && vo.type == 2}}">无问题</view>
+              <view class='marRight-15 float-right btnState' wx:elif="{{vo.data.list == null && vo.type == 3}}">无问题</view>
+              <view class='marRight-15 float-right btnState' wx:elif="{{vo.data == '' && vo.type == 5}}">无问题</view>
+              <view class='marRight-15 float-right btnRed' wx:else>有问题</view>
+          </view>
+    </navigator>
+</view> 
+
+
+
+
+<view   wx:if="{{id == 2}}">
+    <navigator  url='../detail/detail?id={{vo.id}}' class=' gray titleFont-14 bk-fff topBom-10 text-border top-5'  wx:for="{{carList}}" wx:key ='carList' wx:for-item="vo">
+          <view class='top-5 topBom-left-10 clearFloat'>
+              <view class='float-left'>车牌号：{{vo.vehicleNo}}</view>
+              <view class='.marRight-15 float-right borderState' wx:if="{{vo.type == 6}}">行驶证查询</view>
+              <view class='marRight-15 float-right borderRed 'wx:if="{{vo.type == 7}}">品牌车型查询</view>
+          </view>
+          <view class='top-5 topBom-left-10'>车架号：{{vo.vehicleVin}}</view>
+          <view class='top-5 topBom-left-10'>发动机号：{{vo.engineNo}}</view>
+                    <view class='top-5 topBom-left-10 clearFloat'>
+              <view class='float-left'>核查日期：{{vo.createTime}}</view>
+              <view class='marRight-15 float-right btnState' wx:if="{{vo.data.verifystatus == 0 && vo.type == 6}}">无问题</view>
+              <view class='marRight-15 float-right btnState' wx:elif="{{vo.code == 0 && vo.type == 7}}">无问题</view>
+              <view class='marRight-15 float-right btnRed' wx:else>有问题</view>
+          </view>
+    </navigator>
+</view> 

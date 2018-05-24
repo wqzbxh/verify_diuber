@@ -1,0 +1,28 @@
+<view>
+    <!--套牌、行驶证查询  --> 
+    <view class="bk-fff topBom-10 martopBon-5 text-border"  wx:if='{{plateType != 0}}'>
+          <view class='titleFont local top-5 '>1   套牌、行驶证核查</view>
+          <view class='text-center martopBon-10 titleFontGreen'  wx:if='{{verifystatus == 0}}'>{{verifymsg}}</view>
+          <view class='text-center martopBon-10 titleFontRed'  wx:elif='{{verifystatus == 1}}'>{{verifymsg}}</view>
+          <view class='text-center martopBon-10 titleFontRed'  wx:else>交管局数据返回异常</view>
+    </view>
+
+
+    <view class='bk-fff topBom-10 martopBon-5 text-border'    wx:if='{{brandType != 0}}' >
+        <view class='titleFont local top-5'>
+            2  查询品牌车型信息
+        </view>
+        <view  class='text-center martopBon-10 titleFontGreen'>
+            <view class='top-5'>车型：{{cartype}}</view>
+            <view class='top-5'>品牌：{{manufacturer}}</view>
+            <view class='top-5'>具体型号：{{name}}</view>
+            <view class='top-5'>年份：{{yeartype}}</view>
+            <view class='top-5'>环保标准：{{environmentalstandards}}</view>
+            <view class='top-5'>发动机号：{{engine}}</view>
+            <view class='top-5'>变速箱：{{gearbox}}</view>
+            <view class='top-5'>驱动模式：{{drivemode}}</view>
+            <view class='top-5'>参考价格：{{price}}</view>
+            <view class='top-5'>排量：{{displacement}}</view>
+        </view> 
+    </view>   
+</view>

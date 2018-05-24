@@ -1,0 +1,135 @@
+<!--verify/detail/detail.wxml-->
+<view>
+
+
+    <view class='bk-fff topBom-10 martopBon-5 text-border'    wx:if='{{type == 1}}' >
+          <view class='titleFont local top-5 '>   身份证真假核查</view>
+          <view>
+                <view class='text-center martopBon-10 titleFontGreen' wx:if="{{verifystatus == 0}}">姓名和号码匹配OK</view>
+                <view class='text-center martopBon-10 titleFontRed' wx:elif="{{verifystatus ==1}}">姓名和身份证号码不匹配！</view>
+                <view class='text-center martopBon-10 titleFontRed' wx:elif="{{verifystatus ==3}}">交管局数据返回异常！</view>
+          </view> 
+
+    </view>   
+      <view class='bk-fff topBom-10 martopBon-5 text-border'    wx:if='{{type == 2}}' >
+          <view class='titleFont local top-5 '>  手机号实名核查</view>
+          <view>
+                <view class='text-center martopBon-10 titleFontGreen' wx:if="{{verifystatus == 0}}">姓名和手机号实名信息一致</view>
+                <view class='text-center martopBon-10 titleFontRed' wx:elif="{{verifystatus ==1}}">姓名和手机号实名信息不匹配</view>
+                <view class='text-center martopBon-10 titleFontRed' wx:elif="{{verifystatus ==3}}">检查异常！</view>
+          </view> 
+
+    </view>   
+      <view class='bk-fff topBom-10 martopBon-5 text-border'    wx:if='{{type == 3}}' >
+      <view  wx:if="{{verifystatus==0}}">
+          <view class='titleFont local top-5 '>  公民失信记录核查</view>
+          <view class='text-center martopBon-10 titleFontRed'>查到以下是失信信息</view>
+          <view class='martopBon-10' >
+              <view  wx:for="{{loseArray}}" wx:key ='loser' wx:for-item="loseArray"  class='martopBon-10 width100'>
+                    <view class='clearFloat martopleft2'>
+                        <view class='float-left titleFontcontent-12 '>{{loseArray.publishDate}}　　</view>
+                        <view class='float-left titleFontcontent-12 '>{{loseArray.caseCode}}</view>
+                    </view>
+                    <view class='titleFontcontent-13 martopleft2 letter-1'>
+                      {{loseArray.disreputTypeName}}
+                    </view>
+              </view>
+          </view>
+        </view>
+        <view class='bk-fff topBom-10 martopBon-5' wx:elif="{{verifystatus == 1}}">
+            <view class='titleFont local top-5 '>  公民失信记录核查</view>
+            <view class='text-center martopBon-10 titleFontGreen'>未查到失信记录</view>
+        </view>
+
+
+       <view class='bk-fff topBom-10 martopBon-5' wx:elif="{{verifystatus == 3}}">
+            <view class='titleFont local top-5 '>  公民失信记录核查</view>
+            <view class='text-center martopBon-10 titleFontGreen'>检查异常</view>
+        </view>
+    </view>   
+
+
+
+
+
+    
+      <view class='bk-fff topBom-10 martopBon-5 text-border'    wx:if='{{type == 4}}' >
+            <view class='titleFont local top-5 '>  不良记录核查</view>
+            <view class='text-center martopBon-10 titleFontRed'  wx:if="{{verifystatus==0}}">查到以下是不良记录信息
+              <view class='martopBon-10' >
+                  <view  class='martopBon-10 width100'>
+                        <view class='clearFloat martopleft2'>
+                            <view class='float-left titleFontcontent-12 '>{{loseArray.date}}　　</view>
+                            <view class='float-left titleFontcontent-12 '>{{loseArray.controlNo}}</view>
+                        </view>
+                        <view class='titleFontcontent-13 martopleft2 letter-1 text-left titleFontB' >
+                          姓名：{{loseArray.name}}
+                        </view>
+                        <view class='titleFontcontent-13 martopleft2 letter-1 text-left titleFontB' >
+                          {{loseArray.description}}
+                        </view>
+                        <view class='titleFontcontent-13 text-left'>
+                            查询结果描述（A：在逃；B：前科；C：吸毒；D：涉毒）
+                        </view>
+                  </view>
+              </view> 
+            </view>
+          <view class='text-center martopBon-10 titleFontGreen' wx:else>未查到失信记录</view>
+    </view>   
+
+
+
+
+
+      <view class='bk-fff topBom-10 martopBon-5 text-border'    wx:if='{{type == 5}}' >
+         <view class='titleFont local top-5 '>  租车黑名单记录核查</view>
+            <view class='bk-fff topBom-10 martopBon-5'  wx:if="{{verifystatus == 0}}">
+                
+                <view class='text-center martopBon-10 titleFontRed'>查到以下是租车黑名单记录
+                  <view class='martopBon-10' >
+                      <view  wx:for="{{badAction}}" wx:key ='loser' wx:for-item="badAction"  class='martopBon-10 width100'>
+                            <view class='clearFloat martopleft2'>
+                                <view class='float-left titleFontcontent-12 gray'>{{badAction.create_time}}　　</view>
+                            </view> 
+                            <view class='titleFontcontent-13 martopleft2 letter-1'>
+                              {{badAction.comment}}
+                            </view>
+                      </view>
+                  </view>
+                </view>
+            </view>
+            <view class='text-center martopBon-10 titleFontGreen'   wx:if="{{verifystatus == 1}}">未查到租车黑名单记录</view>
+    </view> 
+
+
+
+
+
+      <view class='bk-fff topBom-10 martopBon-5 text-border'    wx:if='{{type == 6}}' >
+          <view class='titleFont local top-5 '>   套牌、行驶证核查</view>
+          <view class='text-center martopBon-10 titleFontGreen'  wx:if='{{verifystatus == 0}}'>{{verifymsg}}</view>
+          <view class='text-center martopBon-10 titleFontRed'  wx:if='{{verifystatus == 1}}'>{{verifymsg}}</view>
+      </view>
+
+   
+      <view class='bk-fff topBom-10 martopBon-5 text-border'  wx:if='{{type == 7}}' >
+               <view class='titleFont local top-5' >  查询品牌车型信息</view>
+                <view  class='text-center martopBon-10 titleFontGreen'  wx:if="{{verifystatus == 0}}">
+                    <view class='top-5' wx:if="{{cartype !=''}}">车型：{{cartype}}</view>
+                    <view class='top-5' wx:if="{{manufacturer !=''}}">品牌：{{manufacturer}}</view>
+                    <view class='top-5' wx:if="{{name !=''}}">具体型号：{{name}}</view>
+                    <view class='top-5' wx:if="{{yeartype !=''}}">年份：{{yeartype}}</view>
+                    <view class='top-5' wx:if="{{environmentalstandards !=''}}">环保标准：{{environmentalstandards}}</view>
+                    <view class='top-5' wx:if="{{engine !=''}}">发动机号：{{engine}}</view>
+                    <view class='top-5' wx:if="{{gearbox !=''}}">变速箱：{{gearbox}}</view>
+                    <view class='top-5' wx:if="{{drivemode !=''}}">驱动模式：{{drivemode}}</view>
+                    <view class='top-5' wx:if="{{price !=''}}">参考价格：{{price}}</view>
+                    <view class='top-5' wx:if="{{displacement !=''}}">排量：{{displacement}}</view>
+                </view> 
+                <view class='text-center martopBon-10 titleFontRed' wx:else >
+                        {{verifymsg}}
+                </view>
+      </view>
+
+
+</view>

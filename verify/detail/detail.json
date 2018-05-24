@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#e2212c",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "核查详情记录",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "#000",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,4 @@
+/* verify/driverResult/index.wxss */
+page{
+  background: #f0f0f2;
+}

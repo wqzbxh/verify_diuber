@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "verify/examine/index",
+    "verify/driver/index",
+    "verify/detail/detail",
+    "verify/driverResult/index",
+    "verify/personal/personal",
+    "verify/examineRecode/index",
+    "verify/examineResult/index"
+  ], 
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e2212c",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white",
+    "backgroundColorTop":"#e2212c",
+    "backgroundColorBottom" :"#e2212c"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "verify/driver/index",
+        "text": "车辆核查",
+        "iconPath": "public/image/tarbar/car.png",
+        "selectedIconPath": "public/image/tarbar/carCheck.png"
+      },
+      {
+        "pagePath": "verify/examine/index",
+        "text": "司机核查",
+        "iconPath": "public/image/tarbar/driver.png",
+        "selectedIconPath": "public/image/tarbar/driverCheck.png"
+      },
+      {
+        "pagePath": "verify/personal/personal",
+        "text": "我的",
+        "iconPath": "public/image/tarbar/mime.png",
+        "selectedIconPath": "public/image/tarbar/mimeCheck.png"
+      }
+    ],
+    "color": "#617d8a",
+    "selectedColor": "#e2212c"
+  }
+}

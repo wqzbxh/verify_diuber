@@ -1,0 +1,22 @@
+<view>
+    <view class='clearFloat bk-fff text-border martopBon-5 topBom-10'>
+        <view class='float-left'>
+            　<image src='{{userInfo.avatarUrl}}' style='width:60px;height:60px;'></image>
+        </view>
+        <view class='float-left  titleFont-15 top-20'>
+              　　　{{userInfo.nickName}}
+        </view>
+    </view> 
+    <view class='martopBon-10 bk-fff text-border '>
+        <navigator url='../examineRecode/index?id=1' class='bottom-border topBom-20 titleFontcontent-15 text-indent1'>
+          ■ 司机核查记录  
+        </navigator>
+ 
+        <navigator url='../examineRecode/index?id=2'  class=' topBom-20 titleFontcontent-15 text-indent1'>
+          ■ 车辆核查记录 
+        </navigator>
+    </view> 
+</view>
+<view class='tan'  wx:if="{{ accredit == 0}}">
+    <button open-type="getUserInfo" class="btn btnopacity" lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击授权进入</button>
+</view> 

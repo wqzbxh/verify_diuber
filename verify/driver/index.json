@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#e2212c",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "车辆核查",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "#000",
+  "enablePullDownRefresh" : true
+}
